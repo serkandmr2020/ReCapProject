@@ -14,6 +14,8 @@ namespace ConsoleUI
             {
                 Console.WriteLine(car.Description);
             }
+
+            Console.WriteLine(carManager.GetById(1).Description);
         }
     }
 }
