@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -19,37 +21,53 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
             if (CheckValidityOfName(car))
             {
                 if (CheckDailyPrice(car))
                 {
                     _carDal.Add(car);
+                    return new SuccessResult(Messages.CarAdded);
                 }
+                return new ErrorResult(Messages.CarPriceInvalid);
             }
 
+            return new ErrorResult(Messages.CarNameInvalid);
+
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carDal.Delete(car);
+            return new SuccessResult(Messages.CarDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            var result= _carDal.GetAll();
+            return new SuccessDataResult<List<Car>>(result, Messages.CarsListed);
         }
 
-        public Car GetById(int id)
+        public IDataResult<Car> GetById(int id)
         {
-            return _carDal.Get(f => f.Id == id);
+            var result= _carDal.Get(f => f.Id == id);
+            return new SuccessDataResult<Car>(result,Messages.CarListedById);
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             _carDal.Update(car);
+            return new SuccessResult(Messages.CarUpdated);
         }
+
+        public IDataResult<List<CarDetailDto>> GetCarDetails()
+        {
+            var result= _carDal.GetCarDetails();
+            return new SuccessDataResult<List<CarDetailDto>>(result,Messages.CarsListedWithDetails);
+        }
+
+
 
         private bool CheckValidityOfName(Car car)
         {
@@ -71,9 +89,5 @@ namespace Business.Concrete
             return false;
         }
 
-        public List<CarDetailDto> GetCarDetails()
-        {
-            return _carDal.GetCarDetails();
-        }
     }
 }
