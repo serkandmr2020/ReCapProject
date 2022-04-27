@@ -12,7 +12,7 @@ namespace Business.Constants
         public static string BrandDeleted = "Marka silindi";
         public static string BrandsListed = "Markalar listelendi";
         public static string BrandListedById = "Id ye göre marka getirildi";
-        public static string BrandUpdated = "";
+        public static string BrandUpdated = "Marka güncellendi";
 
         public static string CarAdded = "Araba eklendi";
         public static string CarNameInvalid="Araba adı geçersiz";
@@ -28,5 +28,25 @@ namespace Business.Constants
         public static string ColorUpdated = "Renk güncellendi";
         public static string ColorsListed = "Renkler listelendi";
         public static string ColorListedById = "Id ye göre renk getirildi";
+
+        public static string UserAdded = "Kullanıcı eklendi";
+        public static string UserDeleted = "Kullanıcı silindi";
+        public static string UsersListed = "Kullanıcı güncellendi";
+        public static string UserListedById = "Kullanıcılar listelendi";
+        public static string UserUpdated = "Id ye göre kullanıcı getirildi";
+
+        public static string RentalAdded = "Kiralama eklendi";
+        public static string CarToRentNotReady = "Kiralanmak istenen araç henüz teslim edilmemiş";
+        public static string RentalDeleted = "Kiralama silindi";
+        public static string RentalUpdated = "Kiralama güncellendi";
+        public static string RentalsListed = "Kiralamalar listelendi";
+        public static string RentalListedById = "Id ye göre kiralama getirildi";
+
+        public static string CustomerAdded= "Müşteri eklendi";
+        public static string CustomerDeleted = "Müşteri silindi";
+        public static string CustomerUpdated = "Müşteri güncellendi";
+        public static string CustomersListed = "Müşteriler listelendi";
+        public static string CustomerListedById = "Id ye göre müşteri getirildi";
+        
     }
 }
