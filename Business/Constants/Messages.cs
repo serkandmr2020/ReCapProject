@@ -47,6 +47,13 @@ namespace Business.Constants
         public static string CustomerUpdated = "Müşteri güncellendi";
         public static string CustomersListed = "Müşteriler listelendi";
         public static string CustomerListedById = "Id ye göre müşteri getirildi";
-        
+
+        public static string CarImageAdded = "Araç resmi eklendi";
+        public static string CarImageDeleted = "Araç resmi silindi";
+        public static string CarImageUpdated = "Araç resmi güncellendi";
+        public static string CarImagesListed = "Araç resimleri listelendi";
+        public static string CarImagesListedByCarId = "Araç id ye göre resimler listelendi";
+        public static string CarImageListedById = "Id ye göre araç resmi getirildi";
+        public static string CarImageLimit="Araç için resim limitine ulaşıldı";
     }
 }
